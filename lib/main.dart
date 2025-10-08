@@ -1033,7 +1033,7 @@ class LoansScreen extends StatelessWidget {
                               Expanded(
                                 child: _buildInfoItem(
                                   'Monthly',
-                                  '\${loan.monthlyPayment.toStringAsFixed(2)}',
+                                  '\$${loan.monthlyPayment.toStringAsFixed(2)}',
                                 ),
                               ),
                             ],
@@ -1124,25 +1124,25 @@ class LoanDetailScreen extends StatelessWidget {
                     _buildDetailRow('Borrower', loan.borrowerName),
                     _buildDetailRow(
                       'Principal Amount',
-                      '\${loan.amount.toStringAsFixed(2)}',
+                      '${loan.amount.toStringAsFixed(2)}',
                     ),
                     _buildDetailRow('Interest Rate', '${loan.interestRate}%'),
                     _buildDetailRow(
                       'Total Amount',
-                      '\${loan.totalAmount.toStringAsFixed(2)}',
+                      '${loan.totalAmount.toStringAsFixed(2)}',
                     ),
                     _buildDetailRow(
                       'Amount Paid',
-                      '\${loan.amountPaid.toStringAsFixed(2)}',
+                      '${loan.amountPaid.toStringAsFixed(2)}',
                     ),
                     _buildDetailRow(
                       'Remaining Amount',
-                      '\${loan.remainingAmount.toStringAsFixed(2)}',
+                      '${loan.remainingAmount.toStringAsFixed(2)}',
                       highlight: true,
                     ),
                     _buildDetailRow(
                       'Monthly Payment',
-                      '\${loan.monthlyPayment.toStringAsFixed(2)}',
+                      '${loan.monthlyPayment.toStringAsFixed(2)}',
                     ),
                     _buildDetailRow(
                       'Duration',
@@ -1246,9 +1246,9 @@ class LoanDetailScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Remaining: \${loan.remainingAmount.toStringAsFixed(2)}'),
+            Text('Remaining: ${loan.remainingAmount.toStringAsFixed(2)}'),
             Text(
-              'Suggested: \${loan.monthlyPayment.toStringAsFixed(2)}',
+              'Suggested: ${loan.monthlyPayment.toStringAsFixed(2)}',
               style: TextStyle(color: Colors.grey[600], fontSize: 14),
             ),
             SizedBox(height: 15),
@@ -1257,7 +1257,7 @@ class LoanDetailScreen extends StatelessWidget {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Payment Amount',
-                prefixText: '/',
+                prefixText: '\$',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -1278,7 +1278,7 @@ class LoanDetailScreen extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                      'Payment of \${amount.toStringAsFixed(2)} processed successfully!',
+                      'Payment of ${amount.toStringAsFixed(2)} processed successfully!',
                     ),
                     backgroundColor: Colors.green,
                   ),
@@ -1331,7 +1331,7 @@ class _ApplyLoanScreenState extends State<ApplyLoanScreen> {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'Loan Amount',
-                  prefixText: '/',
+                  prefixText: '\$',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
